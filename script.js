@@ -57,7 +57,7 @@ function writeDom() {
                     <div class="btn-group">
                         <button
                             type="button"
-                         class="btn btn-sm btn-outline-secondary"
+                         class="btn btn-sm btn-outline-secondary view"
                          data-bs-toggle="modal"
                          data-bs-target="#exampleModal"
                      >
@@ -82,12 +82,9 @@ function writeDom() {
 writeDom()
 
 const editButtons = document.querySelectorAll(".edit")
-console.log(editButtons)
-
-const editButtons = document.querySelectorAll(".edit")
 editButtons.forEach((btn) => {
-	btn.addEventListener("click", (e) => {
-	    console.log(e.target.getAttribute("data-edit-id"))
+	btn.addEventListener("click", () => {
+		console.log("hello edit !!!")
 	})
 })
 
@@ -95,6 +92,10 @@ function editModal(gameId) {
 	// console.log(gameId, gamesList)
 	// Trouvez le jeu en fonction de son identifiant
 	const result = gamesList.findIndex((game) => game.id === parseInt(gameId))
+	modifyModal("Mode Edition")
+}
+
+function modifyModal(modalTitle) {
 	// Écrir le nom du jeu dans le titre du modal
-	document.querySelector(".modal-title").textContent = "Mode Edition"
+	document.querySelector(".modal-title").textContent = modalTitle
 }

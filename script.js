@@ -1,41 +1,41 @@
 const gamesList = [
 	{
 		title: "Sri Lanka",
-		year: 1994,
+		year: 20,
 		imageUrl: "SriLanka.png",
 		id: 1,
 	},
 	{
 		title: "Italie",
-		year: 2009,
+		year: 7,
 		imageUrl:
 			"A7309728.JPG",
 		id: 2,
 	},
 	{
 		title: "Etas-Unis",
-		year: 2022,
+		year: 21,
 		imageUrl:
 			"SD.PNG",
 		id: 3,
 	},
 	{
 		title: "Allemagne",
-		year: 2015,
+		year: 7,
 		imageUrl:
 			"Castle.png",
 		id: 4,
 	},
 	{
 		title: "Portugal",
-		year: 2004,
+		year: 8,
 		imageUrl:
 			"Algarve.PNG",
 		id: 5,
 	},
 	{
 		title: "France",
-		year: 2011,
+		year: 14,
 		imageUrl:
 			"A7309728.JPG",
 		id: 6,
@@ -50,8 +50,8 @@ function writeDom() {
            <div class="card-body">
            <h3 class="card-title">${game.title}</h3>
               <p class="card-text">
-                   This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-               </p>
+                       ${game.year}      
+              </p>
               <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button

@@ -2,7 +2,7 @@ const gamesList = [
 	{
 		title: "Sri Lanka",
 		year: 1994,
-		imageUrl: "images/A7309728.jpg",
+		imageUrl: "A7309728.jpg",
 		id: 1,
 	},
 	{

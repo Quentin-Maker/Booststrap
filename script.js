@@ -3,7 +3,7 @@ const gamesList = [
 		title: "Sri Lanka",
 		year: 1994,
 		imageUrl:
-			"https://cdn.dashfight.com/bcf6a9046a9ea4c1070d4aedb2981103c978a704.png",
+			"A7309728.JPG",
 		id: 1,
 	},
 	{

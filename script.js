@@ -2,8 +2,7 @@ const gamesList = [
 	{
 		title: "Sri Lanka",
 		year: 1994,
-		imageUrl:
-			"https://cdn.dashfight.com/bcf6a9046a9ea4c1070d4aedb2981103c978a704.png",
+		imageUrl: "images/A7309728.jpg",
 		id: 1,
 	},
 	{
@@ -42,7 +41,28 @@ const gamesList = [
 		id: 6,
 	},
 ]
+function writeDom() {
+	gamesList.forEach((game) => {
+		const articleContainer = document.querySelector(".row")
+		articleContainer.innerHTML += `<div class="col">
+                        <div class="card shadow-sm">
+                            <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
+                            <div class="card-body">
+                                <p class="card-text">Description du jeu.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Launch demo modal
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Edit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+	})
+}
 
-gamesList.forEach((game) => {
-	console.log(game)
-})
+writeDom()

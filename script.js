@@ -1,8 +1,8 @@
 const gamesList = [
 	{
-		title: "Sri Lanka 2",
+		title: "Sri Lanka",
 		year: 1994,
-		imageUrl: "A7309728.JPG",
+		imageUrl: "SriLanka.JPG",
 		id: 1,
 	},
 	{
@@ -16,21 +16,21 @@ const gamesList = [
 		title: "Etas-Unis",
 		year: 2022,
 		imageUrl:
-			"A7309728.JPG",
+			"SD.JPG",
 		id: 3,
 	},
 	{
 		title: "Allemagne",
 		year: 2015,
 		imageUrl:
-			"A7309728.JPG",
+			"Castle.JPG",
 		id: 4,
 	},
 	{
-		title: "Autriche",
+		title: "Portugal",
 		year: 2004,
 		imageUrl:
-			"A7309728.JPG",
+			"Algarve.JPG",
 		id: 5,
 	},
 	{

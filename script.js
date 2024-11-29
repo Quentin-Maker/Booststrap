@@ -45,24 +45,37 @@ const gamesList = [
 function writeDom() {
 	gamesList.forEach((game) => {
 		const articleContainer = document.querySelector(".row")
-		articleContainer.innerHTML += `<div class="col">
-                        <div class="card shadow-sm">
-                            <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
-                            <div class="card-body">
-                                <p class="card-text">Description du jeu.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            Launch demo modal
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            Edit
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+		articleContainer.innerHTML += `<article class="col">
+        <div class="card shadow-sm">
+           <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
+           <div class="card-body">
+           <h3 class="card-title">${game.title}</h3>
+              <p class="card-text">
+                   This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+               </p>
+              <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button
+                            type="button"
+                         class="btn btn-sm btn-outline-secondary"
+                         data-bs-toggle="modal"
+                         data-bs-target="#exampleModal"
+                     >
+                         View
+                     </button>
+                     <button
+                         type="button"
+                         class="btn btn-sm btn-outline-secondary"
+                         data-bs-toggle="modal"
+                         data-bs-target="#exampleModal"
+                     >
+                           Edit
+                     </button>
+                   </div>
+              </div>
+            </div>
+       </div>
+    </article>`
 	})
 }
 

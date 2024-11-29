@@ -47,6 +47,7 @@ function writeDom() {
 		articleContainer.innerHTML += `<article class="col">
         <div class="card shadow-sm">
            <img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
+
            <div class="card-body">
            <h3 class="card-title">${game.title}</h3>
               <p class="card-text">
@@ -64,9 +65,9 @@ function writeDom() {
                      </button>
                      <button
                          type="button"
-                         class="btn btn-sm btn-outline-secondary"
-                         data-bs-toggle="modal"
-                         data-bs-target="#exampleModal"
+                         class="btn btn-sm btn-outline-secondary edit"
+                         data-bs-toggle="modal" data-bs-target="#exampleModal"
+                         data-edit-id="${game.id}"
                      >
                            Edit
                      </button>
@@ -79,3 +80,13 @@ function writeDom() {
 }
 
 writeDom()
+
+const editButtons = document.querySelectorAll(".edit")
+console.log(editButtons)
+
+const editButtons = document.querySelectorAll(".edit")
+editButtons.forEach((btn) => {
+	btn.addEventListener("click", (e) => {
+	    console.log(e.target.getAttribute("data-edit-id"))
+	})
+})

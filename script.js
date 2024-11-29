@@ -1,6 +1,6 @@
 const gamesList = [
 	{
-		title: "Sri Lanka",
+		title: "Sri Lanka 2",
 		year: 1994,
 		imageUrl: "A7309728.JPG",
 		id: 1,

@@ -2,42 +2,42 @@ const gamesList = [
 	{
 		title: "Sri Lanka",
 		year: 1994,
-		imageUrl: "images/A7309728.jpg",
+		imageUrl: "A7309728.JPG",
 		id: 1,
 	},
 	{
 		title: "Italie",
 		year: 2009,
 		imageUrl:
-			"https://m.media-amazon.com/images/I/61smNbXSW1L._AC_UF1000,1000_QL80_.jpg",
+			"A7309728.JPG",
 		id: 2,
 	},
 	{
 		title: "Etas-Unis",
 		year: 2022,
 		imageUrl:
-			"https://pic.clubic.com/v1/images/1934271/raw?fit=smartCrop&width=1200&height=675&hash=e7519a9577a2b7291fa26880bb22bed6740836be",
+			"A7309728.JPG",
 		id: 3,
 	},
 	{
 		title: "Allemagne",
 		year: 2015,
 		imageUrl:
-			"https://gaming-cdn.com/images/products/671/orig/street-fighter-v-pc-jeu-steam-cover.jpg?v=1662539255",
+			"A7309728.JPG",
 		id: 4,
 	},
 	{
 		title: "Autriche",
 		year: 2004,
 		imageUrl:
-			"https://gaming-cdn.com/images/products/2284/orig/half-life-2-pc-mac-game-steam-cover.jpg?v=1650555068",
+			"A7309728.JPG",
 		id: 5,
 	},
 	{
 		title: "France",
 		year: 2011,
 		imageUrl:
-			"https://gaming-cdn.com/images/products/146/orig/the-elder-scrolls-v-skyrim-pc-jeu-steam-europe-cover.jpg?v=1661270991",
+			"A7309728.JPG",
 		id: 6,
 	},
 ]

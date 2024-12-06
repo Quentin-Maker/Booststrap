@@ -53,6 +53,7 @@ function writeDom() {
                                 class="btn btn-sm btn-outline-secondary view"
                                 data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"
+                                data-edit-id="${game.id}"
                             >
                                 View
                             </button>
@@ -75,26 +76,80 @@ function writeDom() {
 
 writeDom();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const editButtons = document.querySelectorAll(".edit");
-    editButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const gameId = btn.getAttribute("data-edit-id");
-            editModal(gameId);
-        });
+// Ajouter des gestionnaires pour les boutons "View"
+const viewButtons = document.querySelectorAll(".view");
+viewButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        viewModal(e.target.getAttribute("data-edit-id"));
+    });
+});
+
+function viewModal(gameId) {
+    // Trouver le jeu correspondant
+    const game = gamesList.find((game) => game.id === parseInt(gameId));
+
+    // Modifier le contenu du modal
+    if (game) {
+        const modalTitle = document.querySelector("#exampleModalLabel");
+        const modalBody = document.querySelector(".modal-body");
+
+        // Mettre à jour le titre et l'image dans le modal
+        modalTitle.textContent = game.title;
+        modalBody.innerHTML = `<img src="${game.imageUrl}" alt="${game.title}" style="width: 100%; height: auto;" />`;
+    }
+}
+
+// Ajouter des gestionnaires pour les boutons "Edit"
+const editButtons = document.querySelectorAll(".edit");
+editButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        editModal(e.target.getAttribute("data-edit-id"));
     });
 });
 
 function editModal(gameId) {
+    // Trouver le jeu correspondant
     const game = gamesList.find((game) => game.id === parseInt(gameId));
-    if (game) {
-        modifyModal(game);
-    } else {
-        console.error("Jeu non trouvé pour l'ID :", gameId);
-    }
-}
 
-function modifyModal(game) {
-    document.querySelector(".modal-title").textContent = game.title;
-    document.querySelector(".modal-body").textContent = `Année : ${game.year}`;
+    // Modifier le contenu du modal pour l'édition
+    if (game) {
+        const modalTitle = document.querySelector("#exampleModalLabel");
+        const modalBody = document.querySelector(".modal-body");
+
+        // Mettre à jour le titre et afficher les détails dans un formulaire pour modification
+        modalTitle.textContent = `Edit: ${game.title}`;
+        modalBody.innerHTML = `
+            <form id="editForm">
+                <div class="mb-3">
+                    <label for="editTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="editTitle" value="${game.title}" />
+                </div>
+                <div class="mb-3">
+                    <label for="editYear" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="editYear" value="${game.year}" />
+                </div>
+                <div class="mb-3">
+                    <label for="editImageUrl" class="form-label">Image URL</label>
+                    <input type="text" class="form-control" id="editImageUrl" value="${game.imageUrl}" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        `;
+
+        // Gestion de la soumission du formulaire
+        const editForm = document.querySelector("#editForm");
+        editForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            // Mettre à jour les données du jeu
+            game.title = document.querySelector("#editTitle").value;
+            game.year = parseInt(document.querySelector("#editYear").value, 10);
+            game.imageUrl = document.querySelector("#editImageUrl").value;
+
+            // Fermer la modale et recharger la liste
+            document.querySelector(".btn-close").click();
+            document.querySelector(".row").innerHTML = "";
+            writeDom();
+        });
+    }
 }

@@ -6,19 +6,19 @@ const gamesList = [
         id: 1,
     },
     {
-        title: "Italie",
+        title: "Italy",
         year: 7,
         imageUrl: "A7309728.JPG",
         id: 2,
     },
     {
-        title: "Etats-Unis",
+        title: "United States",
         year: 21,
         imageUrl: "SD.PNG",
         id: 3,
     },
     {
-        title: "Allemagne",
+        title: "Germany",
         year: 7,
         imageUrl: "Castle.png",
         id: 4,
@@ -121,15 +121,15 @@ function editModal(gameId) {
         modalBody.innerHTML = `
             <form id="editForm">
                 <div class="mb-3">
-                    <label for="editTitle" class="form-label">Title</label>
+                    <label for="editTitle" class="form-label">Country</label>
                     <input type="text" class="form-control" id="editTitle" value="${game.title}" />
                 </div>
                 <div class="mb-3">
-                    <label for="editYear" class="form-label">Year</label>
+                    <label for="editYear" class="form-label">Days</label>
                     <input type="number" class="form-control" id="editYear" value="${game.year}" />
                 </div>
                 <div class="mb-3">
-                    <label for="editImageUrl" class="form-label">Image URL</label>
+                    <label for="editImageUrl" class="form-label">Image Name</label>
                     <input type="text" class="form-control" id="editImageUrl" value="${game.imageUrl}" />
                 </div>
                 <button type="submit" class="btn btn-primary">Save Changes</button>

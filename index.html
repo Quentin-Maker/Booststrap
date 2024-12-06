@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap Demo</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
+        
         body {
             background-color: #f7f5fa; /* Bleu-gris clair */
             color: #333; /* Couleur du texte */
@@ -17,6 +19,7 @@
             border: 1px solid #dee2e6; /* Bordure grise */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
         }
+        
 
         header {
             background-color: #003366; /* Bleu foncé pour le header */
@@ -31,7 +34,7 @@
             font-family: 'Abel', sans-serif;
             font-size: 2.8rem; /* Taille du texte */
             font-weight: 400; /* Style par défaut pour Abel */
-            color: #003366; /* Bleu marine foncé */
+            color: #021324; /* Bleu marine foncé */
             letter-spacing: 0.05em; /* Espacement léger entre les lettres */
             text-align: center;
             margin-top: 20px;
@@ -66,16 +69,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Titre du modal</h1>
-                    <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary edit"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-edit-id="1"
-                    >
-                    Edit
-            </button>
-
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    
                 </div>
                 <div class="modal-body">
                     Détails du voyage

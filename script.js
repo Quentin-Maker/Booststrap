@@ -37,7 +37,7 @@ const gamesList = [
 		title: "France",
 		year: 14,
 		imageUrl:
-			"A7309728.JPG",
+			"France.jpg",
 		id: 6,
 	},
 ]

@@ -97,5 +97,6 @@ function editModal(gameId) {
 
 function modifyModal(modalTitle) {
 	// Écrir le nom du jeu dans le titre du modal
-	document.querySelector(".modal-title").textContent = modalTitle
+    document.querySelector(".modal-title").textContent = gamesList[result].title
+	//document.querySelector(".modal-title").textContent = modalTitle
 }

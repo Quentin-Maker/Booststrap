@@ -81,22 +81,25 @@ function writeDom() {
 
 writeDom()
 
-const editButtons = document.querySelectorAll(".edit")
-editButtons.forEach((btn) => {
-	btn.addEventListener("click", () => {
-		console.log("hello edit !!!")
-	})
-})
 
+// Fonction pour gérer l'édition via le modal
 function editModal(gameId) {
-	// console.log(gameId, gamesList)
-	// Trouvez le jeu en fonction de son identifiant
-	const result = gamesList.findIndex((game) => game.id === parseInt(gameId))
-	modifyModal("Mode Edition")
+    // Trouver le jeu correspondant à l'id
+    const game = gamesList.find((game) => game.id === parseInt(gameId));
+
+    if (game) {
+        modifyModal(game); // Passer le jeu trouvé à modifyModal
+    } else {
+        console.error("Jeu non trouvé pour l'ID :", gameId);
+    }
 }
 
-function modifyModal(modalTitle) {
-	// Écrir le nom du jeu dans le titre du modal
-    document.querySelector(".modal-title").textContent = gamesList[result].title
-	//document.querySelector(".modal-title").textContent = modalTitle
+// Modifier le contenu du modal avec les informations du jeu
+function modifyModal(game) {
+    // Écrir le titre du jeu dans le modal
+    document.querySelector(".modal-title").textContent = game.title;
+
+    // Optionnel : ajouter d'autres informations au modal
+    const modalBody = document.querySelector(".modal-body");
+    modalBody.textContent = `Année : ${game.year}`;
 }
